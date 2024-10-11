@@ -15,14 +15,18 @@ import mendixsso.implementation.UserMapper;
 
 public class InitializeUserMapper extends CustomJavaAction<java.lang.Boolean>
 {
-	private java.lang.String createUserMicroflow;
-	private java.lang.String updateUserMicroflow;
+	private final java.lang.String createUserMicroflow;
+	private final java.lang.String updateUserMicroflow;
 
-	public InitializeUserMapper(IContext context, java.lang.String createUserMicroflow, java.lang.String updateUserMicroflow)
+	public InitializeUserMapper(
+		IContext context,
+		java.lang.String _createUserMicroflow,
+		java.lang.String _updateUserMicroflow
+	)
 	{
 		super(context);
-		this.createUserMicroflow = createUserMicroflow;
-		this.updateUserMicroflow = updateUserMicroflow;
+		this.createUserMicroflow = _createUserMicroflow;
+		this.updateUserMicroflow = _updateUserMicroflow;
 	}
 
 	@java.lang.Override
@@ -36,6 +40,7 @@ public class InitializeUserMapper extends CustomJavaAction<java.lang.Boolean>
 
 	/**
 	 * Returns a string representation of this action
+	 * @return a string representation of this action
 	 */
 	@java.lang.Override
 	public java.lang.String toString()
